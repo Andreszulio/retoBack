@@ -27,7 +27,7 @@ public class PersonaService {
 
     public Boolean nameValidator(String name){
         Iterable<Persona> personas = personaRepository.findAll();
-        var Nombre =  StreamSupport.stream(personas.spliterator(), false)
+        long Nombre =  StreamSupport.stream(personas.spliterator(), false)
                 .filter(persona -> name.equals(persona.getNombre())).count();
         return Nombre>0;
     }
